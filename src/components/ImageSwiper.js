@@ -3,9 +3,10 @@ import PropTypes from "prop-types";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 import Swiper from "react-id-swiper";
 import "swiper/css/swiper.css";
+import styled from "styled-components";
+import media from "styled-media-query";
 
 const params = {
-  centeredSlides: true,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
@@ -22,20 +23,28 @@ const ImageSwiper = ({ gridItems }) => (
       <div key={item.text}>
         <section className="section">
           <div className="has-text-centered">
-            <div
-              style={{
-                width: "500px",
-                display: "inline-block",
-              }}
-            >
+            <ImageBlock>
               <PreviewCompatibleImage imageInfo={item} />
-            </div>
+            </ImageBlock>
           </div>
         </section>
       </div>
     ))}
   </Swiper>
 );
+
+const ImageBlock = styled.div`
+  display: inline-block;
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    width: 100vw;
+  `}
+
+  ${media.greaterThan("medium")`
+    /* screen width is greater than 1170px (large) */
+    width: 500px;
+  `}
+`;
 
 ImageSwiper.propTypes = {
   gridItems: PropTypes.arrayOf(
