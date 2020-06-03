@@ -5,34 +5,32 @@ import Swiper from "react-id-swiper";
 import "swiper/css/swiper.css";
 
 const params = {
+  centeredSlides: true,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false,
   },
   pagination: {
     el: ".swiper-pagination",
-    type: "bullets",
     clickable: true,
   },
-  spaceBetween: 30,
 };
 
 const ImageSwiper = ({ gridItems }) => (
   <Swiper {...params}>
     {gridItems.map((item) => (
-      <div key={item.text} className="column is-6">
+      <div key={item.text}>
         <section className="section">
           <div className="has-text-centered">
             <div
               style={{
-                width: "240px",
+                width: "500px",
                 display: "inline-block",
               }}
             >
               <PreviewCompatibleImage imageInfo={item} />
             </div>
           </div>
-          <p>{item.text}</p>
         </section>
       </div>
     ))}
