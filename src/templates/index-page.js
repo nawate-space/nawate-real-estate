@@ -32,7 +32,7 @@ export const IndexPageTemplate = ({
                 </Link>
                 <br />
                 <br />
-                <div className="column is-2 social">
+                <div className="column is-12 has-text-centered social">
                   <a title="facebook" href="https://facebook.com">
                     <img
                       src={facebook}
