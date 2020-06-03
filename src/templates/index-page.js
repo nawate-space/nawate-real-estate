@@ -9,6 +9,7 @@ import BlogRoll from "../components/BlogRoll";
 
 import facebook from "../img/social/facebook.svg";
 import instagram from "../img/social/instagram.svg";
+import logo from "../img/logo-1-1.jpg";
 
 export const IndexPageTemplate = ({
   image,
@@ -20,7 +21,22 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
-    <ImageSwiper gridItems={intro.blurbs}></ImageSwiper>
+    <img
+      src={logo}
+      alt="Nawatespace-Logo"
+      style={{
+        position: "absolute",
+        zIndex: "20",
+        top: "20vh",
+        left: "40vw",
+        width: "300px",
+        height: "80px",
+      }}
+    />
+    <ImageSwiper
+      gridItems={intro.blurbs}
+      style={{ position: "relative", zIndex: "10" }}
+    ></ImageSwiper>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
