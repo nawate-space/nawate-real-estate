@@ -70,13 +70,13 @@ const Logo = styled.div`
     top: 20vh;
         left: 0;
         width: 100vw;
-        height: 20vh;
+        height: 15vh;
   `}
 
   ${media.greaterThan("medium")`
     /* screen width is greater than 1170px (large) */
     top: 30vh;
-        left: 40vw;
+        left: 35vw;
         width: 300px;
         height: 80px;
   `}

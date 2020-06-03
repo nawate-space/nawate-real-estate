@@ -37,7 +37,7 @@ const ImageBlock = styled.div`
   display: inline-block;
   ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
-    width: 100vw;
+    width: 300px;
   `}
 
   ${media.greaterThan("medium")`
