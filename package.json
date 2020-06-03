@@ -30,6 +30,8 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
     "react-id-swiper": "^3.0.0",
+    "styled-components": "^5.1.1",
+    "styled-media-query": "^2.1.2",
     "swiper": "^5.4.1",
     "uuid": "^7.0.0"
   },

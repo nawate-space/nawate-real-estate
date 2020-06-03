@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
+import styled from "styled-components";
+import media from "styled-media-query";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
@@ -21,18 +23,9 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
-    <img
-      src={logo}
-      alt="Nawatespace-Logo"
-      style={{
-        position: "absolute",
-        zIndex: "20",
-        top: "20vh",
-        left: "40vw",
-        width: "300px",
-        height: "80px",
-      }}
-    />
+    <Logo>
+      <img src={logo} alt="Nawatespace-Logo" />
+    </Logo>
     <ImageSwiper
       gridItems={intro.blurbs}
       style={{ position: "relative", zIndex: "10" }}
@@ -72,6 +65,26 @@ export const IndexPageTemplate = ({
     </section>
   </div>
 );
+
+const Logo = styled.div`
+  position: absolute;
+  z-index: 20;
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    top: 20vh;
+        left: 0;
+        width: 100vw;
+        height: 20vh;
+  `}
+
+  ${media.greaterThan("medium")`
+    /* screen width is greater than 1170px (large) */
+    top: 20vh;
+        left: 40vw;
+        width: 300px;
+        height: 80px;
+  `}
+`;
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
