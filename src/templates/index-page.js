@@ -23,19 +23,19 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
-    <Logo>
-      <img src={logo} alt="Nawatespace-Logo" />
-    </Logo>
-    <ImageSwiper
-      gridItems={intro.blurbs}
-      style={{ position: "relative", zIndex: "10" }}
-    ></ImageSwiper>
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
           <div className="columns">
             <div className="column is-12 has-text-centered">
               <div className="content">
+                <Logo>
+                  <img src={logo} alt="Nawatespace-Logo" />
+                </Logo>
+                <ImageSwiper
+                  gridItems={intro.blurbs}
+                  style={{ position: "relative", zIndex: "10" }}
+                ></ImageSwiper>
                 <Link className="title" to="/about">
                   About
                 </Link>
@@ -79,8 +79,8 @@ const Logo = styled.div`
 
   ${media.greaterThan("medium")`
     /* screen width is greater than 1170px (large) */
-    top: 20vh;
-        left: 40vw;
+    top: 30vh;
+        left: 35vw;
         width: 300px;
         height: 80px;
   `}
