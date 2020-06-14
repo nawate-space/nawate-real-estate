@@ -7,7 +7,7 @@ featuredpost: false
 featuredimage: /img/flavor_wheel.jpg
 tags:
   - とりいくぐる
-  - NAWATEPROJECT
+  - NAWATE PROJECT
 ---
 ![](/img/annex-1-4.jpg)
 
@@ -28,4 +28,4 @@ Enterでの改行とShift+Enterでの改行があるので使い分けてくだ�
 
    1. 番号書き
 
-TAGSはそれぞれのプロジェクトの名前を入れてください（アルファベットで）
+TAGSはそれぞれのプロジェクトの名前を入れてください
