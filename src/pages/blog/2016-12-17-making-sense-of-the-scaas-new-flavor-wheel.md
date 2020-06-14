@@ -7,7 +7,7 @@ featuredpost: false
 featuredimage: /img/flavor_wheel.jpg
 tags:
   - とりいくぐる
-  - NAWATE PROJECT
+  - NAWATEPROJECT
 ---
 ![gazou-no-title-wo-nyuryoku](/img/annex-1-4.jpg)
 
@@ -18,18 +18,14 @@ tags:
 
 Enterでの改行とShift+Enterでの改行があるので使い分けてください
 
-
-
 ## **上のツールバーの H から段落のサイズ変更ができます**
 
 * 箇条書きできます
 
   * 箇条書き
 
-
-
 1. 番号書きもできます
 
    1. 番号書き
 
-TAGSはそれぞれのプロジェクトの名前を入れてください
+TAGSはそれぞれのプロジェクトの名前を入れてください（アルファベットで）
