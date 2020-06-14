@@ -1,10 +1,10 @@
 ---
 templateKey: "about-page"
 path: /about
-title: About
+title: VISION
 ---
 
-### NAWATE 不動産について
+### NAWATE PROJECTについて
 
 AAA
 

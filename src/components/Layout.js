@@ -46,6 +46,11 @@ const TemplateWrapper = ({ children }) => {
           property="og:image"
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
+        <script
+          type="text/javascript"
+          src="//typesquare.com/3/tsst/script/ja/typesquare.js?5ee5b692a0d04179a813684bac1e0217"
+          charset="utf-8"
+        ></script>
       </Helmet>
       <div>{children}</div>
     </div>

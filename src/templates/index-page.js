@@ -20,7 +20,7 @@ export const IndexPageTemplate = ({
   description,
   intro,
 }) => (
-  <div>
+  <Body>
     <section className="section section--gradient">
       <div className="has-text-centered">
         <div className="content">
@@ -94,7 +94,7 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
-  </div>
+  </Body>
 );
 
 const Logo = styled.div`
@@ -112,6 +112,10 @@ const Logo = styled.div`
 `;
 const NoColorLink = styled(Link)`
   color: inherit;
+`;
+
+const Body = styled.div`
+  font-family: A1 Gothic R;
 `;
 
 IndexPageTemplate.propTypes = {
