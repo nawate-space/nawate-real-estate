@@ -5,13 +5,11 @@ import styled from "styled-components";
 import media from "styled-media-query";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
-import ImageSwiper from "../components/ImageSwiper";
-import BlogRoll from "../components/BlogRoll";
 
 import facebook from "../img/social/facebook.svg";
 import instagram from "../img/social/instagram.svg";
-import logo from "../img/logo-1-1.jpg";
+import twitter from "../img/social/twitter.svg";
+import TopImage from "../img/NAWATE-PROJECT-TOP-s.jpg";
 
 export const IndexPageTemplate = ({
   image,
@@ -24,37 +22,74 @@ export const IndexPageTemplate = ({
 }) => (
   <div>
     <section className="section section--gradient">
-      <div className="columns">
-        <div className="column is-12 has-text-centered">
-          <div className="content">
-            <Logo>
-              <img src={logo} alt="Nawatespace-Logo" />
-            </Logo>
-            <ImageSwiper
-              gridItems={intro.blurbs}
-              style={{ position: "relative", zIndex: "10" }}
-            ></ImageSwiper>
-            <Link className="title" to="/about">
-              About
-            </Link>
-            <br />
-            <br />
-            <div className="column is-12 has-text-centered social">
-              <a title="facebook" href="https://facebook.com">
-                <img
-                  src={facebook}
-                  alt="Facebook"
-                  style={{ width: "1em", height: "1em" }}
-                />
-              </a>
-              <a title="instagram" href="https://instagram.com">
-                <img
-                  src={instagram}
-                  alt="Instagram"
-                  style={{ width: "1em", height: "1em" }}
-                />
-              </a>
+      <div className="has-text-centered">
+        <div className="content">
+          <Logo>
+            <img src={TopImage} alt="Nawatespace-top-image" />
+          </Logo>
+          <br />
+          <br />
+          <div className="columns">
+            <div className="column"></div>
+            <div className="column">
+              <NoColorLink to="/about" className="is-size-4">
+                VISION
+              </NoColorLink>
             </div>
+            <div className="column">
+              <NoColorLink to="/about" className="is-size-4">
+                PROJECT ARCHIVE
+              </NoColorLink>
+            </div>
+            <div className="column">
+              <NoColorLink to="/about" className="is-size-4">
+                CONTACT
+              </NoColorLink>
+            </div>
+            <div className="column"></div>
+          </div>
+          <br />
+          <br />
+          <p className="is-size-5">
+            まち、場所と人、人と人との新たな接点をつくりづつけることを基点に、
+            <br />
+            地方都市での住まい方、生き方、残し方を考えます。
+          </p>
+          <br />
+          <br />
+          <div>
+            <NoColorLink to="/about" className="is-size-4">
+              NEWS
+            </NoColorLink>
+          </div>
+          <br />
+          <br />
+          <div className="column is-12 has-text-centered social">
+            <a title="facebook" href="https://facebook.com" target="_blank">
+              <img
+                src={facebook}
+                alt="Facebook"
+                style={{ width: "1em", height: "1em" }}
+              />
+            </a>
+            <a
+              title="instagram"
+              href="https://www.instagram.com/3355_nawate/"
+              target="_blank"
+            >
+              <img
+                src={instagram}
+                alt="Instagram"
+                style={{ width: "1em", height: "1em" }}
+              />
+            </a>
+            <a title="twitter" href="https://twitter.com" target="_blank">
+              <img
+                src={twitter}
+                alt="Twitter"
+                style={{ width: "1em", height: "1em" }}
+              />
+            </a>
           </div>
         </div>
       </div>
@@ -63,23 +98,20 @@ export const IndexPageTemplate = ({
 );
 
 const Logo = styled.div`
-  position: absolute;
-  z-index: 20;
+  margin: auto;
+  display: inline-block;
   ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
-    top: 20vh;
-        left: 0;
         width: 100vw;
         height: 10vh;
-  `}
-
-  ${media.greaterThan("medium")`
+  `} ${media.greaterThan("medium")`
     /* screen width is greater than 1170px (large) */
-    top: 30vh;
-        left: 40vw;
-        width: 300px;
-        height: 80px;
-  `}
+        width: 500px;
+        height: 200px;
+  `};
+`;
+const NoColorLink = styled(Link)`
+  color: inherit;
 `;
 
 IndexPageTemplate.propTypes = {
