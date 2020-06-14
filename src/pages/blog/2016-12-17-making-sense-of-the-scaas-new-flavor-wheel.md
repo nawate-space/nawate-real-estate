@@ -9,7 +9,7 @@ tags:
   - とりいくぐる
   - NAWATEPROJECT
 ---
-![gazou-no-title-wo-nyuryoku](/img/annex-1-4.jpg)
+![](/img/annex-1-4.jpg)
 
 自由に書けます
 
