@@ -51,6 +51,7 @@ const TemplateWrapper = ({ children }) => {
           src="//typesquare.com/3/tsst/script/ja/typesquare.js?5ee5b692a0d04179a813684bac1e0217"
           charset="utf-8"
         ></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"></link>
       </Helmet>
       <div>{children}</div>
     </div>

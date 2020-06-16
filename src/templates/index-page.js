@@ -12,77 +12,85 @@ import twitter from "../img/social/twitter.svg";
 import TopImage from "../img/NAWATE-PROJECT-TOP-s.jpg";
 
 export const IndexPageTemplate = ({ description }) => (
-  <Body>
-    <section className="section section--gradient">
-      <div className="has-text-centered">
-        <div className="content">
-          <Logo>
-            <img src={TopImage} alt="Nawatespace-top-image" />
-          </Logo>
-          <br />
-          <br />
-          <div className="columns">
-            <div className="column"></div>
-            <div className="column">
-              <NoColorLink to="/about" className="is-size-4">
-                VISION
-              </NoColorLink>
-            </div>
-            <div className="column">
-              <NoColorLink to="/about" className="is-size-4">
-                PROJECT ARCHIVE
-              </NoColorLink>
-            </div>
-            <div className="column">
-              <NoColorLink to="/about" className="is-size-4">
-                CONTACT
-              </NoColorLink>
-            </div>
-            <div className="column"></div>
-          </div>
-          <br />
-          <br />
-          <p className="is-size-5">{description}</p>
-          <br />
-          <br />
-          <div>
+  <section className="section section--gradient">
+    <div className="has-text-centered">
+      <div className="content">
+        <Logo>
+          <img src={TopImage} alt="Nawatespace-top" />
+        </Logo>
+        <br />
+        <br />
+        <div className="columns">
+          <div className="column"></div>
+          <div className="column">
             <NoColorLink to="/about" className="is-size-4">
-              NEWS
+              VISION
             </NoColorLink>
           </div>
-          <br />
-          <br />
-          <div className="column is-12 has-text-centered social">
-            <a title="facebook" href="https://facebook.com" target="_blank">
-              <img
-                src={facebook}
-                alt="Facebook"
-                style={{ width: "1em", height: "1em" }}
-              />
-            </a>
-            <a
-              title="instagram"
-              href="https://www.instagram.com/3355_nawate/"
-              target="_blank"
-            >
-              <img
-                src={instagram}
-                alt="Instagram"
-                style={{ width: "1em", height: "1em" }}
-              />
-            </a>
-            <a title="twitter" href="https://twitter.com" target="_blank">
-              <img
-                src={twitter}
-                alt="Twitter"
-                style={{ width: "1em", height: "1em" }}
-              />
-            </a>
+          <div className="column">
+            <NoColorLink to="/about" className="is-size-4">
+              PROJECT ARCHIVE
+            </NoColorLink>
           </div>
+          <div className="column">
+            <NoColorA
+              href="https://shopnawate.stores.jp/"
+              target="_blank"
+              rel="noreferrer"
+              className="is-size-4"
+            >
+              ONLINE SHOP
+            </NoColorA>
+          </div>
+          <div className="column">
+            <NoColorLink to="/about" className="is-size-4">
+              CONTACT
+            </NoColorLink>
+          </div>
+          <div className="column"></div>
+        </div>
+        <br />
+        <br />
+        <Honbun className="is-size-5">{description}</Honbun>
+        <br />
+        <br />
+        <div>
+          <NoColorLink to="/about" className="is-size-4">
+            NEWS
+          </NoColorLink>
+        </div>
+        <br />
+        <br />
+        <div className="column is-12 has-text-centered social">
+          <a title="facebook" href="https://facebook.com" target="_blank">
+            <img
+              src={facebook}
+              alt="Facebook"
+              style={{ width: "1em", height: "1em" }}
+            />
+          </a>
+          <a
+            title="instagram"
+            href="https://www.instagram.com/3355_nawate/"
+            target="_blank"
+          >
+            <img
+              src={instagram}
+              alt="Instagram"
+              style={{ width: "1em", height: "1em" }}
+            />
+          </a>
+          <a title="twitter" href="https://twitter.com" target="_blank">
+            <img
+              src={twitter}
+              alt="Twitter"
+              style={{ width: "1em", height: "1em" }}
+            />
+          </a>
         </div>
       </div>
-    </section>
-  </Body>
+    </div>
+  </section>
 );
 
 const Logo = styled.div`
@@ -90,7 +98,7 @@ const Logo = styled.div`
   display: inline-block;
   ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
-        width: 100vw;
+        width: 90vw;
         height: 10vh;
   `} ${media.greaterThan("medium")`
     /* screen width is greater than 1170px (large) */
@@ -98,11 +106,17 @@ const Logo = styled.div`
         height: 200px;
   `};
 `;
+
 const NoColorLink = styled(Link)`
-  color: inherit;
+  color: inherit;4
+  font-family: 'Roboto', sans-serif;
+`;
+const NoColorA = styled.a`
+color: inherit;4
+font-family: 'Roboto', sans-serif;
 `;
 
-const Body = styled.div`
+const Honbun = styled.p`
   font-family: A1 Gothic R;
 `;
 
