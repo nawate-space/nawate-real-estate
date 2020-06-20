@@ -3,6 +3,7 @@ import { kebabCase } from "lodash";
 import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 import Layout from "../../components/Layout";
+import Navbar from "../components/Navbar";
 
 const LimitedPage = () => (
   <Layout>
