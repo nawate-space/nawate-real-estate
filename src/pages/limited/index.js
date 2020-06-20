@@ -6,6 +6,7 @@ import Layout from "../../components/Layout";
 
 const LimitedPage = () => (
   <Layout>
+    <Navbar />
     <section className="section">
       <Helmet title="限定コンテンツ" />
       <div className="container content">
