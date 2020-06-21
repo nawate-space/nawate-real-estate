@@ -29,19 +29,49 @@ const LimitedPage = () => (
             </h1>
           </div>
         </div>
-        <BlockCentering
-          src="https://w.soundcloud.com/player/?visual=true&url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F843010534&show_artwork=true&secret_token=s-hjxi4jXfZu8&omit_script=1"
-          allowfullscreen
-          allow="encrypted-media"
-        ></BlockCentering>
+        <iframe
+          width="100%"
+          height="300"
+          scrolling="no"
+          frameborder="no"
+          allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/844161601&color=%2382d1c7&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+        ></iframe>
+        <div
+          style={{
+            fontSize: "10px",
+            color: "#cccccc",
+            lineBreak: "anywhere",
+            wordBreak: "normal",
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            textOverflow: "ellipsis",
+            fontFamily:
+              "Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif",
+            fontWeight: 100,
+          }}
+        >
+          <a
+            href="https://soundcloud.com/kapo-ritmo"
+            title="kapo-ritmo"
+            target="_blank"
+            style={{ color: "#cccccc", textDecoration: "none" }}
+          >
+            kapo-ritmo
+          </a>
+          ·
+          <a
+            href="https://soundcloud.com/kapo-ritmo/present"
+            title="present(by NAWATE PROJECT)"
+            target="_blank"
+            style={{ color: "#cccccc", textDecoration: "none" }}
+          >
+            present(by NAWATE PROJECT)
+          </a>
+        </div>
       </div>
     </section>
   </Layout>
 );
-
-const BlockCentering = styled.iframe`
-  margin: auto;
-  display: block;
-`;
 
 export default LimitedPage;
