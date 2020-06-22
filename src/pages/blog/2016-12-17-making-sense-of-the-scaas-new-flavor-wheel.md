@@ -4,7 +4,7 @@ title: サンプル その1
 date: 2020-06-14T08:16:57.019Z
 description: タイトル下の要約文章（特になければ半角スペースを入れておいてください）
 featuredpost: false
-featuredimage: /img/flavor_wheel.jpg
+featuredimage: /img/NAWATELogo.png
 tags:
   - とりいくぐる
   - NAWATE PROJECT
