@@ -10,9 +10,18 @@ import media from "styled-media-query";
 import TopImage from "../img/NAWATE-PROJECT-TOP-s.jpg";
 import ViewMoreImage from "../img/ViewMore.svg";
 import LogoImage from "../img/NAWATELogo.svg";
-import MemberIconImage from "../img/MemberIcon.svg";
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
+export const AboutPageTemplate = ({
+  title,
+  content,
+  contentComponent,
+  heading,
+  descriptions,
+  theme1,
+  theme2,
+  members,
+  corporate,
+}) => {
   const PageContent = contentComponent || Content;
 
   return (
@@ -26,11 +35,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
               </h2>
               <br />
               <br />
-              <h3 className="is-size-5">
-                小さな場所や出来事を、点々と積み重ねていくことで
-                <br />
-                まちと人の関係を紡いでいく
-              </h3>
+              <h3 className="is-size-5">{heading}</h3>
               <br />
               <br />
               <div className="columns">
@@ -45,18 +50,12 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
                   </Top>
                 </div>
               </div>
-              <Honbun>
-                まちにある、忘れられた余白をみつけ、場所性を生かしながら、あたらしい活動を生み出す
-              </Honbun>
-              <Honbun>
-                人と場所、人と人との接点を生み出すような時間の流れをつくりつづける
-              </Honbun>
-              <Honbun>
-                暮らしのなかの、生きる楽しみや経験する時間を共有できる場所をつくる
-              </Honbun>
-              <h3 className="is-size-4 has-text-weight-bold">
-                NAWATE PROJECTとは？
-              </h3>
+              <div>
+                {descriptions.map((description) => (
+                  <Honbun>{description.text}</Honbun>
+                ))}
+              </div>
+              <h3 className="is-size-4 has-text-weight-bold">{theme1}</h3>
               <LogoArea className="columns">
                 <div className="column">
                   <Logo>
@@ -77,7 +76,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
               <ViewMore to="/">
                 <img src={ViewMoreImage} alt="To-What-NAWATE"></img>
               </ViewMore>
-              <h3 className="is-size-4 has-text-weight-bold">PROJECTの変遷</h3>
+              <h3 className="is-size-4 has-text-weight-bold">{theme2}</h3>
               <LogoArea className="columns">
                 <div className="column">
                   <Logo>
@@ -101,84 +100,39 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
               <h3 className="is-size-4 has-text-weight-bold">
                 PROJECTメンバー
               </h3>
-              <p>何か文章入れる？</p>
-              <MemberArea className="columns">
-                <div className="column">
-                  <MemberIcon>
-                    <img src={MemberIconImage} alt="Nawatespace-top" />
-                  </MemberIcon>
-                  <p>石井 信 / Shin Ishii</p>
-                </div>
-                <div className="column">
-                  <MemberIcon>
-                    <img src={MemberIconImage} alt="Nawatespace-top" />
-                  </MemberIcon>
-                  <p>成田海波 / Minami Narita</p>
-                </div>
-                <div className="column">
-                  <MemberIcon>
-                    <img src={MemberIconImage} alt="Nawatespace-top" />
-                  </MemberIcon>
-                  <p>片岡八重子 / Yaeko Kataoka</p>
-                </div>
+              <MemberArea className="columns is-multiline">
+                {members.map((member) => (
+                  <div className="column">
+                    <MemberIcon
+                      style={{
+                        backgroundImage: `url(${
+                          !!member.image.childImageSharp
+                            ? member.image.childImageSharp.fluid.src
+                            : member.image
+                        })`,
+                        backgroundSize: "contain",
+                      }}
+                    ></MemberIcon>
+                    <p>{member.name}</p>
+                  </div>
+                ))}
               </MemberArea>
-              <MemberArea className="columns">
-                <div className="column">
-                  <MemberIcon>
-                    <img src={MemberIconImage} alt="Nawatespace-top" />
-                  </MemberIcon>
-                  <p>原 明子 / Akiko Hara</p>
-                </div>
-                <div className="column">
-                  <MemberIcon>
-                    <img src={MemberIconImage} alt="Nawatespace-top" />
-                  </MemberIcon>
-                  <p>谷 勇気 / Yuki Tani</p>
-                </div>
-                <div className="column">
-                  <MemberIcon>
-                    <img src={MemberIconImage} alt="Nawatespace-top" />
-                  </MemberIcon>
-                  <p>佐々木 恵梨 /Eri Sasaki</p>
-                </div>
-              </MemberArea>
+
               <HorizontalLine />
               <CorporateArea>
                 <h3 className="is-size-4 has-text-weight-bold">会社概要</h3>
                 <br />
                 <br />
-                <div className="columns">
-                  <div className="column">
-                    <p>会社名</p>
+                {corporate.map((item) => (
+                  <div className="columns">
+                    <div className="column">
+                      <p>{item.title}</p>
+                    </div>
+                    <div className="column">
+                      <p>{item.body}</p>
+                    </div>
                   </div>
-                  <div className="column">
-                    <p>合同会社さんさんごご</p>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column">
-                    <p>設立年</p>
-                  </div>
-                  <div className="column">
-                    <p>2015年10月1日</p>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column">
-                    <p>所在地</p>
-                  </div>
-                  <div className="column">
-                    <p>〒700-0026 岡山市北区奉還町4-7-15</p>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column">
-                    <p>事業内容</p>
-                  </div>
-                  <div className="column">
-                    <p>あああああああ</p>
-                  </div>
-                </div>
+                ))}
               </CorporateArea>
               <PageContent className="content" content={content} />
             </div>
@@ -253,7 +207,7 @@ const ViewMore = styled(Link)`
 
 const MemberIcon = styled.div`
   margin: auto;
-  display: inline-block;
+  display: block;
   ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
         width: 90vw;
@@ -267,7 +221,7 @@ const MemberIcon = styled.div`
 
 const MemberArea = styled.div`
   margin: auto;
-  display: inline-block;
+  display: block;
   ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
         width: 90vw;
@@ -280,8 +234,9 @@ const MemberArea = styled.div`
 `;
 
 const HorizontalLine = styled.div`
+  margin-top: 6rem;
   margin-bottom: 2rem;
-  display: inline-block;
+  display: block;
   width: 80vw;
   height: 2px;
   background-color: #c4c4c4;
@@ -289,7 +244,7 @@ const HorizontalLine = styled.div`
 
 const CorporateArea = styled.div`
   margin: auto;
-  display: inline-block;
+  display: block;
   text-align: left;
   ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
@@ -306,6 +261,12 @@ AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
+  heading: PropTypes.string,
+  descriptions: PropTypes.array,
+  theme1: PropTypes.string,
+  theme2: PropTypes.string,
+  members: PropTypes.array,
+  corporate: PropTypes.array,
 };
 
 const AboutPage = ({ data }) => {
@@ -317,7 +278,13 @@ const AboutPage = ({ data }) => {
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
+        heading={post.frontmatter.heading}
+        descriptions={post.frontmatter.descriptions}
         content={post.html}
+        theme1={post.frontmatter.theme1}
+        theme2={post.frontmatter.theme2}
+        members={post.frontmatter.members}
+        corporate={post.frontmatter.corporate}
       />
     </Layout>
   );
@@ -335,6 +302,26 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
+        heading
+        descriptions {
+          text
+        }
+        theme1
+        theme2
+        members {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 240, quality: 64) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          name
+        }
+        corporate {
+          title
+          body
+        }
       }
     }
   }
