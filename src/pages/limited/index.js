@@ -5,6 +5,9 @@ import { Link, graphql } from "gatsby";
 import Layout from "../../components/Layout";
 import Navbar from "../../components/Navbar";
 import styled from "styled-components";
+import media from "styled-media-query";
+import LimitedLogo from "../../img/LimitedLogo.png";
+import instagram from "../../img/social/instagram.svg";
 
 const LimitedPage = () => (
   <Layout>
@@ -19,16 +22,13 @@ const LimitedPage = () => (
     <section className="section">
       <Helmet title="LimitedContents" />
       <div className="container content">
-        <div className="columns">
-          <div
-            className="column has-text-centered"
-            style={{ marginBottom: "6rem" }}
-          >
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              LimitedContents
-            </h1>
-          </div>
-        </div>
+        <StyledLogo>
+          <img src={LimitedLogo}></img>
+        </StyledLogo>
+        <Honbun className="has-text-centered">
+          ー お便り募集のテーマ ー<br />
+          あなたの周りの、半径100m以内にある最近の朝の風景を教えてください。
+        </Honbun>
         <iframe
           width="100%"
           height="300"
@@ -69,9 +69,63 @@ const LimitedPage = () => (
             present(by NAWATE PROJECT)
           </a>
         </div>
+        <HonbunDiv>
+          <Honbun>
+            BGM / present ( by NAWATE PROJECT ) <br />
+            とりいくぐるや4丁目を舞台に、音楽をつくりました。
+            <br />
+            このごろの奉還町の朝の音を贈ります。ぜひ作業中のBGMとして聴いてみてください。
+            <br />
+            音楽: Kapo-ritmo, 岩本象一
+            <br /> 録音, 編集: Kapo <br />
+            協力: nawate staff
+          </Honbun>
+        </HonbunDiv>
+        <HonbunDiv className="columns">
+          <Honbun>企画: NAWATE PROJECT</Honbun>
+          <a
+            title="instagram"
+            href="https://www.instagram.com/3355_nawate/"
+            target="_blank"
+          >
+            <img
+              src={instagram}
+              alt="Instagram"
+              style={{
+                width: "1em",
+                height: "1em",
+                marginLeft: "1em",
+                pointer: "cursor",
+              }}
+            />
+          </a>
+        </HonbunDiv>
       </div>
     </section>
   </Layout>
 );
+
+const StyledLogo = styled.div`
+  margin: auto;
+  display: block;
+  ${media.lessThan("medium")`
+  /* screen width is less than 768px (medium) */
+      width: 90vw;
+      height: 10vh;
+`} ${media.greaterThan("medium")`
+  /* screen width is greater than 1170px (large) */
+      width: 500px;
+      height: 200px;
+`};
+`;
+
+const Honbun = styled.p`
+  font-family: A1 Gothic R;
+`;
+
+const HonbunDiv = styled.div`
+  margin: auto;
+  display: inline-block;
+`;
 
 export default LimitedPage;
