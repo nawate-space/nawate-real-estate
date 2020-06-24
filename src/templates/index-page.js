@@ -28,7 +28,7 @@ export const IndexPageTemplate = ({ description }) => (
             </NoColorLink>
           </div>
           <div className="column">
-            <NoColorLink to="/about" className="is-size-4">
+            <NoColorLink to="/project-archive" className="is-size-4">
               PROJECT ARCHIVE
             </NoColorLink>
           </div>
@@ -55,7 +55,7 @@ export const IndexPageTemplate = ({ description }) => (
         <br />
         <br />
         <div>
-          <NoColorLink to="/about" className="is-size-4">
+          <NoColorLink to="/blog" className="is-size-4">
             NEWS
           </NoColorLink>
         </div>
