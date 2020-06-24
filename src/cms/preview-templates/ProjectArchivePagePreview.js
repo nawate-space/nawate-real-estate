@@ -12,7 +12,7 @@ const ProjectArchivePagePreview = ({ entry, widgetFor }) => (
     allProjects={{
       heading: entry.getIn(["data", "allProjects", "heading"]),
       description: entry.getIn(["data", "allProjects", "description"]),
-      plans: projects,
+      projects: projects,
     }}
   />
 );
