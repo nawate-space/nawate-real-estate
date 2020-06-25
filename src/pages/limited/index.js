@@ -33,7 +33,7 @@ const LimitedPage = () => (
           width="100%"
           height="300"
           scrolling="no"
-          frameborder="no"
+          frameBorder="no"
           allow="autoplay"
           src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/844161601&color=%2382d1c7&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
         ></iframe>
@@ -121,6 +121,13 @@ const StyledLogo = styled.div`
 
 const Honbun = styled.p`
   font-family: A1 Gothic R;
+  ${media.lessThan("medium")`
+  /* screen width is less than 768px (medium) */
+      font-size: 0.8rem;
+`} ${media.greaterThan("medium")`
+  /* screen width is greater than 1170px (large) */
+      
+`};
 `;
 
 const HonbunDiv = styled.div`
