@@ -25,6 +25,8 @@ const LimitedPage = () => (
         <StyledLogo>
           <img src={LimitedLogo}></img>
         </StyledLogo>
+        <br />
+        <br />
         <Honbun className="has-text-centered">
           ー お便り募集のテーマ ー<br />
           あなたの周りの、半径100m以内にある最近の朝の風景を教えてください。
