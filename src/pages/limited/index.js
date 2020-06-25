@@ -107,7 +107,7 @@ const LimitedPage = () => (
 
 const StyledLogo = styled.div`
   margin: auto;
-  display: block;
+  display: inline-block;
   ${media.lessThan("medium")`
   /* screen width is less than 768px (medium) */
       width: 90vw;
