@@ -77,6 +77,12 @@ const LimitedPage = () => (
             とりいくぐるや4丁目を舞台に、音楽をつくりました。
             <br />
             このごろの奉還町の朝の音を贈ります。ぜひ作業中のBGMとして聴いてみてください。
+          </Honbun>
+          <HonbunTyuSyaku>
+            SoundCloudのアプリをお持ちでない方は、Listen in
+            browserを選択してください。
+          </HonbunTyuSyaku>
+          <Honbun>
             <br />
             音楽: Kapo-ritmo, 岩本象一
             <br /> 録音, 編集: Kapo <br />
@@ -87,7 +93,7 @@ const LimitedPage = () => (
           <Honbun>企画: NAWATE PROJECT</Honbun>
           <a
             title="instagram"
-            href="https://www.instagram.com/3355_nawate/"
+            href="https://www.instagram.com/nawate_project/"
             target="_blank"
           >
             <img
@@ -129,6 +135,17 @@ const Honbun = styled.p`
 `} ${media.greaterThan("medium")`
   /* screen width is greater than 1170px (large) */
       
+`};
+`;
+
+const HonbunTyuSyaku = styled.p`
+  font-family: A1 Gothic R;
+  ${media.lessThan("medium")`
+  /* screen width is less than 768px (medium) */
+      font-size: 0.6rem;
+`} ${media.greaterThan("medium")`
+  /* screen width is greater than 1170px (large) */
+  font-size: 0.8rem;
 `};
 `;
 
