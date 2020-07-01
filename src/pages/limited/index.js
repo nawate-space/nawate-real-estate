@@ -89,7 +89,7 @@ const LimitedPage = () => (
             協力: nawate staff
           </Honbun>
         </HonbunDiv>
-        <HonbunDiv className="columns">
+        <HonbunDivFlex>
           <Honbun>企画: NAWATE PROJECT</Honbun>
           <a
             title="instagram"
@@ -107,7 +107,7 @@ const LimitedPage = () => (
               }}
             />
           </a>
-        </HonbunDiv>
+        </HonbunDivFlex>
       </div>
     </section>
   </Layout>
@@ -152,6 +152,11 @@ const HonbunTyuSyaku = styled.p`
 const HonbunDiv = styled.div`
   margin: auto;
   display: inline-block;
+`;
+
+const HonbunDivFlex = styled.div`
+  margin: auto;
+  display: flex;
 `;
 
 export default LimitedPage;
