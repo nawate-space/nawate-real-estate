@@ -18,7 +18,6 @@ const LimitedPage = () => (
         charset="utf-8"
       />
     </Helmet>
-    <Navbar />
     <section className="section">
       <Helmet title="LimitedContents" />
       <div className="container content">
@@ -84,9 +83,9 @@ const LimitedPage = () => (
           </HonbunTyuSyaku>
           <Honbun>
             <br />
-            音楽: Kapo-ritmo, 岩本象一
-            <br /> 録音, 編集: Kapo <br />
-            協力: nawate staff
+            音楽: kapo-ritmo, 岩本象一
+            <br /> 録音, 編集: kapo <br />
+            協力: NAWATE PROJECT スタッフ(成田海波、佐々木恵梨、谷勇気)
           </Honbun>
         </HonbunDiv>
         <HonbunDivFlex>

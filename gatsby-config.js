@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "NAWATE NEW SPACE",
     description:
-      "NAWATEプロジェクトの一環として、ライフスタイルを重視した住居探しを行っています。",
+      "岡山市西口・奉還町4丁目(旧畷元町周辺)を拠点にGuesthouse&Loungeとりいくぐる、複合施設Nawate、ラウンジ・カド、シェアハウス気楽荘を運営。この地域で生まれる活動や日々の営み、新たな風景を発信していきます",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
