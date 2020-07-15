@@ -98,6 +98,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
+    render={(data, count) => <ArchiveRoll data={data} count={count} />}
   />
 );
