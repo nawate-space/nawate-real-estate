@@ -1,7 +1,7 @@
 import React from "react";
 
 import Layout from "../../components/Layout";
-import BlogRoll from "../../components/BlogRoll";
+import ArchiveRoll from "../../components/ArchiveRoll";
 import Navbar from "../../components/Navbar";
 
 export default class ArchiveIndexPage extends React.Component {
@@ -15,7 +15,7 @@ export default class ArchiveIndexPage extends React.Component {
               Archive
             </h2>
             <div className="content">
-              <BlogRoll />
+              <ArchiveRoll />
             </div>
           </div>
         </section>
