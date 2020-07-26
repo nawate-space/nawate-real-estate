@@ -5,7 +5,11 @@ import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import Navbar from "../components/Navbar";
+import ArchiveSideView from "../components/ArchiveSideView";
 import Content, { HTMLContent } from "../components/Content";
+
+import styled from "styled-components";
+import media from "styled-media-query";
 
 export const ArchivePostTemplate = ({
   content,
@@ -14,19 +18,35 @@ export const ArchivePostTemplate = ({
   tags,
   title,
   helmet,
+  youtube,
+  era,
+  color,
+  howlong,
+  tagGroups,
 }) => {
   const PostContent = contentComponent || Content;
 
   return (
-    <section className="section">
+    <div>
       {helmet || ""}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
+      <GridBody>
+        <MainDiv className="container content">
+          <div>
+            <div>{youtube || ""}</div>
+            <div>
+              <p>title</p>
+              <h1 className="title is-size-3 has-text-weight-bold is-bold-light">
+                {title}
+              </h1>
+            </div>
+            <DetailDiv className="has-text-weight-bold">
+              <p>
+                {era} / {color} / {howlong}
+              </p>
+            </DetailDiv>
+            <DescriptionDiv>
+              <p>{description}</p>
+            </DescriptionDiv>
             <PostContent content={content} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
@@ -41,22 +61,31 @@ export const ArchivePostTemplate = ({
               </div>
             ) : null}
           </div>
-        </div>
-      </div>
-    </section>
+        </MainDiv>
+        <SideDiv>
+          <ArchiveSideView tagGroups={tagGroups}></ArchiveSideView>
+        </SideDiv>
+      </GridBody>
+    </div>
   );
 };
 
 ArchivePostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
+  youtube: PropTypes.object,
+  era: PropTypes.string,
+  color: PropTypes.string,
+  howlong: PropTypes.string,
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  tagGroups: PropTypes.array,
 };
 
 const ArchivePost = ({ data }) => {
   const { markdownRemark: post } = data;
+  const { allMarkdownRemark: tagGroups } = data;
 
   return (
     <Layout>
@@ -74,8 +103,22 @@ const ArchivePost = ({ data }) => {
             />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
+        tags={post.frontmatter.archivetags}
         title={post.frontmatter.title}
+        youtube={
+          <iframe
+            width="560"
+            height="315"
+            src={`${post.frontmatter.youtube}`}
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        }
+        era={post.frontmatter.era}
+        color={post.frontmatter.color}
+        howlong={post.frontmatter.howlong}
+        tagGroups={tagGroups}
       />
     </Layout>
   );
@@ -84,6 +127,7 @@ const ArchivePost = ({ data }) => {
 ArchivePost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
+    allMarkdownRemark: PropTypes.object,
   }),
 };
 
@@ -96,10 +140,43 @@ export const pageQuery = graphql`
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
+        youtube
+        era
+        color
+        howlong
         title
         description
-        tags
+        archivetags
+      }
+    }
+    allMarkdownRemark(limit: 1000) {
+      group(field: frontmatter___archivetags) {
+        fieldValue
+        totalCount
       }
     }
   }
+`;
+
+const GridBody = styled.div`
+  display: flex;
+  background-color: #ebcfb5;
+`;
+
+const MainDiv = styled.div`
+  flex: 1 1 80%;
+  margin: 2em 2em 0 5em;
+`;
+
+const SideDiv = styled.div`
+  flex: 1 1 20%;
+`;
+
+const DetailDiv = styled.div`
+  font-size: 0.8em;
+`;
+
+const DescriptionDiv = styled.div`
+  font-size: 0.8em;
+  margin: 1em 0 2em 20em;
 `;

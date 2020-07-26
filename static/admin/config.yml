@@ -43,12 +43,16 @@ collections:
           widget: "hidden",
           default: "archive-post",
         }
+      - { label: "Youtube", name: "youtube", widget: "string" }
+      - { label: "Era", name: "era", widget: "string" }
+      - { label: "Color", name: "color", widget: "string" }
+      - { label: "Howlong", name: "howlong", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Tags", name: "archivetags", widget: "list" }
 
   - name: "pages"
     label: "Pages"
