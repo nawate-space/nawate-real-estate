@@ -62,15 +62,17 @@ export const pageQuery = graphql`
 
 const GridBody = styled.div`
   display: flex;
-  background-color: #ebcfb5;
+  background-color: #faf0e6;
 `;
 
 const MainDiv = styled.div`
   flex: 1 1 80%;
   margin: 10px 10px 10px 10px;
+  font-family: Yu Mincho;
 `;
 
 const SideDiv = styled.div`
   flex: 1 1 20%;
   margin: 10px 10px 10px 10px;
+  font-family: Yu Mincho;
 `;

@@ -46,6 +46,8 @@ export const ArchivePostTemplate = ({
             </DetailDiv>
             <DescriptionDiv>
               <p>{description}</p>
+              <br />
+              <p>———————————————</p>
             </DescriptionDiv>
             <PostContent content={content} />
             {tags && tags.length ? (
@@ -160,16 +162,18 @@ export const pageQuery = graphql`
 
 const GridBody = styled.div`
   display: flex;
-  background-color: #ebcfb5;
+  background-color: #faf0e6;
 `;
 
 const MainDiv = styled.div`
   flex: 1 1 80%;
   margin: 2em 2em 0 5em;
+  font-family: Yu Mincho;
 `;
 
 const SideDiv = styled.div`
   flex: 1 1 20%;
+  font-family: Yu Mincho;
 `;
 
 const DetailDiv = styled.div`
@@ -178,5 +182,5 @@ const DetailDiv = styled.div`
 
 const DescriptionDiv = styled.div`
   font-size: 0.8em;
-  margin: 1em 0 2em 20em;
+  margin: 1em 0 2em 10em;
 `;

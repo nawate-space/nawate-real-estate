@@ -108,12 +108,12 @@ const Logo = styled.div`
 `;
 
 const NoColorLink = styled(Link)`
-  color: inherit;4
-  font-family: 'Roboto', sans-serif;
+  color: inherit;
+  font-family: "Roboto", sans-serif;
 `;
 const NoColorA = styled.a`
-color: inherit;4
-font-family: 'Roboto', sans-serif;
+  color: inherit;
+  font-family: "Roboto", sans-serif;
 `;
 
 const Honbun = styled.p`
